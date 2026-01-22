@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LILIAN KULCHAR | Artista Plástica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+              serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+              signature: ['"Mrs Saint Delafield"', 'cursive'],
+            },
+            colors: {
+              black: '#050505', // Slightly softer black for screens
+              white: '#ffffff',
+            },
+            letterSpacing: {
+              widest: '.25em',
+              tighter: '-.05em',
+            },
+            animation: {
+              'bounce-slow': 'bounce 3s infinite',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+      
+      /* Reveal on Scroll Animation Classes */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #fafafa;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4d4d4;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #525252;
+      }
+
+      /* PRINT / PDF STYLES */
+      @media print {
+        @page {
+          margin: 1.5cm;
+          size: auto;
+        }
+
+        body {
+          background: white !important;
+          color: black !important;
+          font-size: 11pt;
+        }
+
+        /* Force visibility of all content, overriding scroll animations */
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+
+        /* Hide interactive elements not useful in PDF */
+        button, 
+        a[href^="https://wa.me"], 
+        .animate-bounce-slow,
+        nav,
+        footer a {
+          display: none !important;
+        }
+
+        /* Adjust Header for print (ink saving and readability) */
+        header {
+          height: auto !important;
+          min-height: 0 !important;
+          padding: 2rem 0 !important;
+          background: white !important;
+          color: black !important;
+          page-break-after: avoid;
+        }
+
+        header h1 {
+          color: black !important;
+          mix-blend-mode: normal !important;
+          font-size: 3rem !important; /* Smaller title for paper */
+        }
+        
+        header p {
+          color: #333 !important;
+          border-color: #000 !important;
+        }
+        
+        /* Hide header background images to save ink and clarity */
+        header img {
+          display: none !important;
+        }
+        
+        header .absolute.bg-black\/40 {
+          display: none !important;
+        }
+
+        /* Layout adjustments */
+        section {
+          padding: 1rem 0 !important;
+          page-break-inside: avoid;
+        }
+
+        /* Typography adjustments */
+        h2 {
+          border-bottom-color: #000 !important;
+          font-size: 1.5rem !important;
+        }
+
+        p {
+          text-align: justify;
+        }
+
+        /* Ensure images fit nicely */
+        img {
+          max-width: 100% !important;
+          page-break-inside: avoid;
+        }
+        
+        /* Ensure links are handled nicely if visible */
+        a {
+          text-decoration: none !important;
+          color: black !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white text-black antialiased selection:bg-black selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
