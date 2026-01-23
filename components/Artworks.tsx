@@ -14,7 +14,7 @@ const Artworks: React.FC = () => {
     <Section id="artworks">
       <div className="mb-16 md:mb-24 text-center">
         <h2 className="text-2xl md:text-3xl font-normal tracking-[0.2em] uppercase">
-          Artes Autorais
+          Artes Completamente Autorais
         </h2>
         {/* Changed text-gray-400 to text-gray-500 for better contrast */}
         <p className="mt-4 text-xs md:text-sm text-gray-500 font-light tracking-widest uppercase">
