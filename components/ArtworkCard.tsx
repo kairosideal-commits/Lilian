@@ -33,7 +33,7 @@ const ArtworkCard: React.FC<ArtworkCardProps> = ({ artwork, whatsappLink }) => {
             src={img} 
             alt={`${artwork.title} - ${index + 1}`} 
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
-              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              index === currentImageIndex ? 'opacity-0' : 'opacity-0'
             }`}
           />
         ))}
